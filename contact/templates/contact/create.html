@@ -10,19 +10,20 @@
         method="POST"
         enctype="multipart/form-data"
         >
+            {% csrf_token %}
 
-        <div class="form-content">
-            <div class="form-group">
-            <label for="id_first_name">LABEL</label>
-            <input type="text" name="first_name" maxlength="255" id="id_first_name">
+            <div class="form-content">
+                <div class="form-group">
+                <label for="id_first_name">LABEL</label>
+                <input type="text" name="first_name" maxlength="255" id="id_first_name">
+                </div>
             </div>
-        </div>
 
-        <div class="form-content">
-            <div class="form-group">
-            <button class="btn" type="submit">Send</button>
+            <div class="form-content">
+                <div class="form-group">
+                <button class="btn" type="submit">Send</button>
+                </div>
             </div>
-        </div>
 
         </form>
     </div>
