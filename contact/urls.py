@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     # contact (crud)
-    path('contact/<int:contact_id>/detail', views.contact, name='contact'), # read
+    path('contact/<int:contact_id>/', views.contact, name='contact'), # read
     path('contact/create/', views.create, name='create'), # create
+    path('contact/<int:contact_id>/update/', views.update, name='update'), # update
 ]
