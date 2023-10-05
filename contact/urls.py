@@ -9,6 +9,6 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     # contact (crud)
-    path('contact/<int:contact_id>/detail', views.contact, name='contact'),
-    path('contact/create/', views.create, name='create'),
+    path('contact/<int:contact_id>/detail', views.contact, name='contact'), # read
+    path('contact/create/', views.create, name='create'), # create
 ]
