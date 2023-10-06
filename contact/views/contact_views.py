@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from contact.models import Contact
 
-# Create your views here.
+
 def index(request):
     contacts = Contact.objects \
         .filter(show=True)\

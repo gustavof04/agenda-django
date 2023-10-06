@@ -2,16 +2,6 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-# Criar os fields da model Contact
-# id (primary key - cria automático pelo django)
-# first_name (string - CharField 50char), last_name (string - CharField 50char), phone (string - Charfield 50char)
-# email (email - EmailField 254char), created_date (date - DateTimeField(default=timezone.now)), description (text)
-
-# Depois
-# category (foreign key), show (boolean), owner (foreign key)
-# picture (imagem)
-
-# Create your models here.
 class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
