@@ -334,3 +334,10 @@ svg {
 .btn-delete {
     background: tomato;
 }
+
+.center-img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
