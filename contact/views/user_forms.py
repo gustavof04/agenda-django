@@ -15,7 +15,7 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Usuário registrado com sucesso!')
-            return redirect('contact:index')
+            return redirect('contact:login')
 
     return render(
         request,
