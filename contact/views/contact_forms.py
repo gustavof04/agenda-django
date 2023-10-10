@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
@@ -20,7 +21,10 @@ def create(request):
         if form.is_valid():
             contact = form.save(commit=False)
             contact.owner = request.user
+            contact_name = contact.first_name + ' ' + contact.last_name
             contact.save()
+            success_message = f'O contato de {contact_name} foi criado com sucesso!'
+            messages.success(request, success_message)
             return redirect('contact:update', contact_id=contact.pk)
 
         return render(
@@ -56,7 +60,10 @@ def update(request, contact_id):
         }
 
         if form.is_valid():
+            contact_name = contact.first_name + ' ' + contact.last_name
             contact = form.save()
+            success_message = f'O contato de {contact_name} foi atualizado com sucesso!'
+            messages.success(request, success_message)
             return redirect('contact:update', contact_id=contact.pk)
 
         return render(
@@ -84,7 +91,10 @@ def delete(request, contact_id):
     confirmation = request.POST.get('confirmation', 'no')
 
     if confirmation == 'yes':
+        contact_name = contact.first_name + ' ' + contact.last_name
         contact.delete()
+        success_message = f'O contato de {contact_name} foi deletado com sucesso!'
+        messages.success(request, success_message)
         return redirect('contact:index')
 
     return render(
