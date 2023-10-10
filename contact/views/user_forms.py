@@ -1,4 +1,5 @@
 from django.contrib import auth, messages
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
@@ -7,15 +8,16 @@ from contact.forms import RegisterForm, RegisterUpdateForm
 
 
 def register(request):
-    form = RegisterForm()
-
     if request.method == 'POST':
         form = RegisterForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            user = form.save()
+            login(request, user)
             messages.success(request, 'Usuário registrado com sucesso!')
-            return redirect('contact:login')
+            return redirect('contact:index')
+
+    form = RegisterForm()
 
     return render(
         request,
