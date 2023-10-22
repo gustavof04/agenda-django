@@ -14,7 +14,8 @@ class ContactForm(forms.ModelForm):
                 'accept': 'image/*',
             }
         ),
-        required=False
+        required=False,
+        label='Foto (opcional)',
     )
 
     class Meta:
@@ -24,6 +25,14 @@ class ContactForm(forms.ModelForm):
             'email', 'description', 'category',
             'picture',
         )
+        labels = {
+            'first_name': 'Nome',
+            'last_name': 'Sobrenome',
+            'phone': 'Telefone',
+            'email': 'E-mail',
+            'description': 'Descrição (opcional)',
+            'category': 'Categoria (opcional)',
+        }
 
     def clean(self):
         cleaned_data = self.cleaned_data
@@ -39,31 +48,21 @@ class ContactForm(forms.ModelForm):
             self.add_error('last_name', msg)
 
         return super().clean()
-    
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
-
-        if first_name == 'ABC':
-            self.add_error(
-                'first_name',
-                ValidationError(
-                    'Veio do add_error',
-                    code='invalid'
-                )
-            )
-
-        return first_name
 
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField(
+        label='Nome',
         required=True,
         min_length=3,
     )
     last_name = forms.CharField(
+        label='Sobrenome',
         required=True,
         min_length=3,
     )
-    email = forms.EmailField()
+    email = forms.EmailField(
+        label='E-mail',
+    )
 
     class Meta:
         model = User
@@ -100,23 +99,25 @@ class RegisterForm(UserCreationForm):
 
 class RegisterUpdateForm(forms.ModelForm):
     first_name = forms.CharField(
+        label="Nome",
         min_length=2,
         max_length=30,
         required=True,
-        help_text='Required.',
+        help_text='Obrigatório.',
         error_messages={
-            'min_length': 'Please, add more than 2 letters.'
+            'min_length': 'Por favor, adicione mais que duas letras ao seu nome.'
         }
     )
     last_name = forms.CharField(
+        label="Sobrenome",
         min_length=2,
         max_length=30,
         required=True,
-        help_text='Required.'
+        help_text='Obrigatório.'
     )
 
     password1 = forms.CharField(
-        label="Password",
+        label="Senha",
         strip=False,
         widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
         help_text=password_validation.password_validators_help_text_html(),
@@ -124,10 +125,10 @@ class RegisterUpdateForm(forms.ModelForm):
     )
 
     password2 = forms.CharField(
-        label="Password 2",
+        label="Confirmação de senha",
         strip=False,
         widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
-        help_text='Use the same password as before.',
+        help_text='Use a mesma senha de antes.',
         required=False,
     )
 
@@ -137,6 +138,10 @@ class RegisterUpdateForm(forms.ModelForm):
             'first_name', 'last_name', 'email',
             'username',
         )
+        labels = {
+            'email': 'E-mail',
+            'username': 'Usuário',
+        }
 
     def save(self, commit=True):
         cleaned_data = self.cleaned_data
@@ -172,7 +177,7 @@ class RegisterUpdateForm(forms.ModelForm):
             if User.objects.filter(email=email).exists():
                 self.add_error(
                     'email',
-                    ValidationError('Já existe este e-mail', code='invalid')
+                    ValidationError('O e-mail informado já existe. Tente novamente com outro e-mail.', code='invalid')
                 )
 
         return email
