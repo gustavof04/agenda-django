@@ -168,6 +168,12 @@ svg {
     }
 }
 
+@media (max-width: 1200px) {
+    .content {
+        margin: calc(var(--spacing) * 2) 1.5rem;
+    }
+}
+
 .single-contact h1 {
     margin: 1rem 0;
 }
