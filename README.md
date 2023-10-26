@@ -1,6 +1,6 @@
 # 📒 Agenda em Django
 
-Agenda CRUD feita em Python utilizando o framework Django. É utilizada como um sistema para a criação, edição e remoção de contatos que são armazenados em uma base de dados SQLite e gerenciados por um owner (usuário) logado na agenda.
+Agenda eletrônica feita em Python utilizando o framework Django. É utilizada como um sistema para a criação, edição e remoção de contatos que são armazenados em uma base de dados SQLite e gerenciados por um owner (usuário) logado na agenda.
 
 ## 🔧 Tecnologias utilizadas
 Python V.: 3.11.1 || Django V.: 4.2.5
