@@ -25,7 +25,7 @@ def create(request):
             contact.save()
             success_message = f'O contato de {contact_name} foi criado com sucesso!'
             messages.success(request, success_message)
-            return redirect('contact:update', contact_id=contact.pk)
+            return redirect('contact:index')
 
         return render(
             request,
