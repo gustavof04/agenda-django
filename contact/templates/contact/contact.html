@@ -19,6 +19,10 @@
             </p>
         {% endif %}
 
+        {% if contact.owner %}
+            <p class="created-by">Criado por <b>{{ contact.owner }}</b></p>
+        {% endif %}
+
         {% if user == contact.owner %}
             <div class="contact-links">
                 <a class="btn btn-link" href="{% url "contact:update" contact.id %}">Atualizar</a>

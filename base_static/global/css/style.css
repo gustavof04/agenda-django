@@ -359,3 +359,19 @@ svg {
     margin-right: auto;
     width: 50%;
 }
+
+.created-by {
+    text-align: end;
+    font-size: var(--small-font-size);
+}
+
+@media (max-width: 600px) {
+    .contact-links {
+        justify-content: center;
+    }
+
+    .created-by {
+        text-align: center;
+        padding-top: var(--spacing);
+    }
+}
