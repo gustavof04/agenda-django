@@ -6,8 +6,9 @@ from django.shortcuts import render, redirect
 
 from contact.forms import RegisterForm, RegisterUpdateForm
 
-
 def register(request):
+    form = RegisterForm()
+
     if request.method == 'POST':
         form = RegisterForm(request.POST)
 
@@ -16,8 +17,6 @@ def register(request):
             login(request, user)
             messages.success(request, 'Usuário registrado com sucesso!')
             return redirect('contact:index')
-
-    form = RegisterForm()
 
     return render(
         request,
