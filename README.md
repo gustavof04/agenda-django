@@ -17,7 +17,6 @@ https://www.python.org/ftp/python/3.11.1/python-3.11.1-macos11.pkg
 
 ## ⚙️ Configurando o ambiente virtual
 * No seu terminal, navegue até a pasta raiz do projeto e execute o seguinte comando para criar um ambiente virtual:
-
   ```bash
   python -m venv nome_da_virtualenv
   ```
@@ -42,18 +41,22 @@ https://www.python.org/ftp/python/3.11.1/python-3.11.1-macos11.pkg
   ```
 
 ## 🚀 Iniciando a agenda
-* Faça as migrations com o comando abaixo:
+* Faça as migrações com o comando abaixo:
   ```bash
   python manage.py migrate
   ```
 
 * Execute o seguinte comando para iniciar o servidor:
-
   ```bash
   python manage.py runserver
   ```
 
-* Clique segurando CTRL/Command no endereço localhost de sua máquina para ser redirecionado à agenda.
-* Crie seu usuário clicando em "Register".
+* Em um navegador de sua preferência, pesquise pelo endereço <code>127.0.0.1:8000</code> para ser redirecionado para a agenda.
+* Crie seu usuário clicando em "Register" e preencha suas informações.
 * Comece a criar seus contatos!
 
+## 🔓 Bônus (acessando o admin)
+* Crie um superusuário no seu terminal com <code>python manage.py createsuperuser</code>.
+* Se estiver com uma conta logada na agenda, faça o logout.
+* Acesse o painel admin no seu navegador com <code>127.0.0.1:8000/admin</code> e faça login com o superusuário que você acabou de criar.
+* Agora, como administrador, você pode analisar as models, seus campos e todos os dados em funcionamento, bem como manipulá-los da forma que desejar.
