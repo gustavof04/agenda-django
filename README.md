@@ -2,6 +2,8 @@
 
 Agenda eletrônica feita em Python utilizando o framework Django. É utilizada como um sistema para a criação, edição e remoção de contatos que são armazenados em uma base de dados SQLite e gerenciados por um owner (usuário) logado na agenda.
 
+> Status do Projeto: ✔️ (concluído)
+
 ## 🔧 Tecnologias utilizadas
 Python V.: 3.11.1 || Django V.: 4.2.5 || SQLite || Whitenoise V.: 6.6.0
 
