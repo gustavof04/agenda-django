@@ -7,16 +7,6 @@ Agenda eletrônica feita em Python utilizando o framework Django. É utilizada c
 ## 🔧 Tecnologias utilizadas
 Python V.: 3.11.1 || Django V.: 4.2.5 || SQLite || Whitenoise V.: 6.6.0
 
-OBS.: É obrigatória a instalação manual do Python na versão citada acima para ser possível a criação do ambiente virtual e instalação das dependências do projeto.
-
-- Windows 8+
-
-https://www.python.org/ftp/python/3.11.1/python-3.11.1-amd64.exe
-
-- macOS 10.9+
-
-https://www.python.org/ftp/python/3.11.1/python-3.11.1-macos11.pkg
-
 ## ⚙️ Configurando o ambiente virtual
 * No seu terminal, navegue até a pasta raiz do projeto e execute o seguinte comando para criar um ambiente virtual:
   ```bash
