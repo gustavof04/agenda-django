@@ -1,54 +1,54 @@
-# 📒 Agenda em Django
+# 📒 Django Agenda
 
-Agenda eletrônica feita em Python utilizando o framework Django. É utilizada como um sistema para a criação, edição e remoção de contatos que são armazenados em uma base de dados SQLite e gerenciados por um owner (usuário) logado na agenda.
+Electronic agenda made in Python using the Django framework. It is used as a system for creating, editing, and removing contacts that are stored in an SQLite database and managed by a logged-in owner (user).
 
-> Status do Projeto: ✔️ (concluído)
+> Project Status: ✔️ (completed)
 
-## 🔧 Tecnologias utilizadas
+## 🔧 Technologies Used
 Python V.: 3.11.1 || Django V.: 4.2.5 || SQLite || Whitenoise V.: 6.6.0
 
-## ⚙️ Configurando o ambiente virtual
-* No seu terminal, navegue até a pasta raiz do projeto e execute o seguinte comando para criar um ambiente virtual:
+## ⚙️ Setting Up the Virtual Environment
+* In your terminal, navigate to the project's root folder and run the following command to create a virtual environment:
   ```bash
-  python -m venv nome_da_virtualenv
+  python -m venv name_of_virtualenv
   ```
 
-* Rode o comando de acordo com seu sistema para ativar seu ambiente virtual:
+* Run the command according to your system to activate your virtual environment:
 
   Windows
   ```bash
-  .\nome_da_virtualenv\Scripts\activate
+  .\name_of_virtualenv\Scripts\activate
   ```
 
-  Linux ou macOS
+  Linux or macOS
   ```bash
-  source nome_da_virtualenv/bin/activate
+  source name_of_virtualenv/bin/activate
   ``` 
 
-## 🧑‍🔬 Instalando as dependências
-* Com o ambiente virtual **ativado**, instale as dependências do projeto com o seguinte comando:
+## 🧑‍🔬 Installing Dependencies
+* With the virtual environment **activated**, install the project dependencies with the following command:
 
   ```bash
   pip install -r requirements.txt
   ```
 
-## 🚀 Iniciando a agenda
-* Faça as migrações com o comando abaixo:
+## 🚀 Starting the Agenda
+* Apply the migrations with the command below:
   ```bash
   python manage.py migrate
   ```
 
-* Execute o seguinte comando para iniciar o servidor:
+* Run the following command to start the server:
   ```bash
   python manage.py runserver
   ```
 
-* Em um navegador de sua preferência, pesquise pelo endereço <code>127.0.0.1:8000</code> para ser redirecionado para a agenda.
-* Crie seu usuário clicando em "Register" e preencha suas informações.
-* Comece a criar seus contatos!
+* In a browser of your choice, go to the address <code>127.0.0.1:8000</code> to be redirected to the agenda.
+* Create your user by clicking on "Register" and filling in your information.
+* Start creating your contacts!
 
-## 🔓 Bônus (acessando o admin)
-* Crie um superusuário no seu terminal com <code>python manage.py createsuperuser</code>.
-* Se estiver com uma conta logada na agenda, faça o logout.
-* Acesse o painel admin no seu navegador com <code>127.0.0.1:8000/admin</code> e faça login com o superusuário que você acabou de criar.
-* Agora, como administrador, você pode analisar as models, seus campos e todos os dados em funcionamento, bem como manipulá-los da forma que desejar.
+## 🔓 Bonus (Accessing the Admin)
+* Create a superuser in your terminal with <code>python manage.py createsuperuser</code>.
+* If you are logged into the agenda, log out.
+* Access the admin panel in your browser at <code>127.0.0.1:8000/admin</code> and log in with the superuser you just created.
+* Now, as an administrator, you can analyze the models, their fields, and all the data in operation, as well as manipulate them as you wish.
